@@ -1,0 +1,29 @@
+{
+  "name": "c-go-ecommerce",
+  "description": "Click&amp;Go coding assessment",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "sass": "^1.71.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardozuritadev/c-go-ecommerce.git"
+  },
+  "author": "Ricardo Zurita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardozuritadev/c-go-ecommerce/issues"
+  },
+  "homepage": "https://github.com/ricardozuritadev/c-go-ecommerce#readme"
+}
