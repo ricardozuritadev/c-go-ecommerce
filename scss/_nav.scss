@@ -6,11 +6,6 @@
     padding: 4rem;
   }
 
-  &__logo {
-    color: $color-primary;
-    font-size: 3.2rem;
-  }
-
   &__list {
     display: none;
     text-align: center;
@@ -45,6 +40,7 @@
     }
 
     &__items a {
+      font-weight: 500;
       padding: 0;
     }
   }
@@ -55,6 +51,11 @@
   position: absolute;
   background-color: $color-white;
   width: 100%;
+}
+
+#nav-logo {
+  color: $color-primary;
+  font-size: 3.2rem;
 }
 
 #toggle-nav-button {
