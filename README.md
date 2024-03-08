@@ -1,4 +1,5 @@
 <h1 align="center">C&Go Ecommerce</h1>
+
 ![logo](https://github.com/ricardozuritadev/c-go-ecommerce/assets/84975927/c58698d1-0a38-42af-8867-89318a14d721)
 
 
@@ -76,5 +77,5 @@ gulp
 
 * BEM Metodology
 
-## Autor
+## Author
 [<img src="https://avatars.githubusercontent.com/u/84975927?v=4" width=115><br><sub>Ricardo Zurita</sub>](https://github.com/ricardozuritadev)
