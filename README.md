@@ -32,7 +32,8 @@ The web aplication consume data from an API provided by the company for the task
 
 ## Instalación
 The project has been deployed in Vercel and can be accessed at the following URL:
-![C&Go Ecommerce](https://c-go-ecommerce.vercel.app/)
+
+![C&GoEcommerce](https://c-go-ecommerce.vercel.app/)
 
 To run it locally, follow these steps:
 ~~~
