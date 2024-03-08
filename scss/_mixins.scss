@@ -1,0 +1,24 @@
+// RESPONSIVE
+@mixin from-medium {
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin from-large {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin from-xlarge {
+  @media (min-width: $breakpoint-xlarge) {
+    @content;
+  }
+}
+
+@mixin from-xxlarge {
+  @media (min-width: $breakpoint-xxlarge) {
+    @content;
+  }
+}
