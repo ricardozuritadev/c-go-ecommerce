@@ -9,6 +9,7 @@ $color-primary: #ff5b00;
 $color-white: #f9f9f9;
 $color-white-transparent: rgba(255, 255, 255, 0.8);
 $color-gray: rgba(0, 0, 0, 0.3);
+$color-grey-light: #979797;
 $color-black: #000;
 
 // Fonts
@@ -21,6 +22,8 @@ $font-size-base: 1.6rem;
 
 // Shadows
 $shadow-card: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+$shadow-modal: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+  rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
 // Border radius
 $border-radius-s: 5px;
