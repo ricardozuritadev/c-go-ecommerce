@@ -3,6 +3,7 @@
   top: 0;
   background: $color-white-transparent;
   backdrop-filter: blur(1.5rem) saturate(200%);
+  user-select: none;
   z-index: 1000;
 
   &__mobile {
