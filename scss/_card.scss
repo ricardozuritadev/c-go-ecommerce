@@ -1,0 +1,59 @@
+.card {
+  flex: 0 0 auto;
+  box-shadow: $shadow-card;
+  border-radius: $border-radius-m;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: 30rem;
+
+  &__img-container {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: $border-radius-m;
+    border-top-right-radius: $border-radius-m;
+    height: 21rem;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &--soldout {
+      filter: grayscale(100%);
+    }
+  }
+
+  &__info {
+    padding: 2rem;
+    border-bottom-left-radius: $border-radius-m;
+    border-bottom-right-radius: $border-radius-m;
+    cursor: pointer;
+  }
+
+  &__price {
+    font-size: $font-size-l;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+
+  &__soldout {
+    display: flex;
+  }
+}
+
+.soldout-tag {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  color: $color-white;
+  font-weight: bold;
+  background-color: $color-primary;
+  border-top-right-radius: $border-radius-s;
+  border-bottom-right-radius: $border-radius-s;
+  padding: 1rem 4rem;
+  z-index: 99;
+}

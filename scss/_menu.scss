@@ -1,0 +1,26 @@
+.menu-section {
+  padding-top: 10rem;
+
+  @include from-medium {
+    margin-left: 8rem;
+  }
+
+  &__title {
+    margin: 0 0 2rem 2rem;
+    font-size: $font-size-xxl;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-bottom: 6rem;
+    width: 100%;
+
+    @include from-medium {
+      overflow-x: hidden;
+      flex-wrap: wrap;
+    }
+  }
+}
