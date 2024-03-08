@@ -1,0 +1,33 @@
+.footer {
+  display: block;
+  background-color: $color-primary;
+  padding: 4rem 0 2rem 0;
+  width: 100%;
+
+  &__section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    color: $color-white;
+    gap: 8rem;
+  }
+
+  &__item {
+    list-style: auto;
+  }
+
+  &__item-dot {
+    list-style: disc;
+  }
+
+  @include from-medium {
+    display: flex;
+    justify-items: space-around;
+    padding: 8rem 0;
+
+    &__section {
+      gap: 34rem;
+      width: 50%;
+    }
+  }
+}
