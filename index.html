@@ -4,15 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/19a7530794.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/navbar-mobile.js" defer></script>
     <title>C-Go Ecommerce</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
-        <li><a href="#">Link4</a></li>
+    <nav class="nav">
+      <!-- Mobile navbar -->
+      <div class="nav__mobile">
+        <i class="nav__logo" class="fa-solid fa-bowl-food"></i>
+        <button id="toggle-nav-button" class="nav__button">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Desktop navbar -->
+      <ul class="nav__list">
+        <li class="nav__items nav__items--selected"><a href="#">Burgers</a></li>
+        <li class="nav__items"><a href="#">Kebabs</a></li>
+        <li class="nav__items"><a href="#">Sides</a></li>
+        <li class="nav__items"><a href="#">Drinks</a></li>
       </ul>
     </nav>
 
