@@ -19,27 +19,27 @@ gulp.task('browser-sync', () => {
     }
   });
 
-  gulp.watch('./scss/*.scss').on('change', reload);
-  gulp.watch('./scss/**/*.scss', gulp.series('css', 'css-unminified'));
+  gulp.watch('./styles/*.scss').on('change', reload);
+  gulp.watch('./styles/**/*.scss', gulp.series('css', 'css-unminified'));
   gulp.watch('./js/**/*.js').on('change', reload);
   gulp.watch('./js/**/*.js', gulp.series('js'));
 });
 
 gulp.task('css', () => {
   return gulp
-    .src('./scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError)) // Compila a CSS
-    .pipe(cleanCSS({ compatibility: 'ie8' })) // Minifica el CSS
-    .pipe(gulp.dest('./dist/css')) // Guarda el resultado en la carpeta ./dist/css
-    .pipe(browserSync.stream()); // Recarga el navegador si se está ejecutando browserSync
+    .src('./styles/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('css-unminified', () => {
   return gulp
-    .src('./scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError)) // Compila a CSS
-    .pipe(gulp.dest('./css')) // Guarda el resultado en la carpeta ./css
-    .pipe(browserSync.stream()); // Recarga el navegador si se está ejecutando browserSync
+    .src('./styles/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('js', () => {
