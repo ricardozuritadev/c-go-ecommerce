@@ -35,6 +35,7 @@ h2 {
   top: 0;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(1.5rem) saturate(200%);
+  user-select: none;
   z-index: 1000;
 }
 .nav__mobile {
@@ -108,6 +109,7 @@ h2 {
   margin-left: 2rem;
   margin-right: 2rem;
   width: 30rem;
+  user-select: none;
 }
 .card__img-container {
   position: relative;
@@ -178,5 +180,36 @@ h2 {
   .menu-section__cards {
     overflow-x: hidden;
     flex-wrap: wrap;
+  }
+}
+
+.footer {
+  display: block;
+  background-color: #ff5b00;
+  padding: 4rem 0 2rem 0;
+  width: 100%;
+}
+.footer__section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  color: #f9f9f9;
+  gap: 8rem;
+}
+.footer__item {
+  list-style: auto;
+}
+.footer__item-dot {
+  list-style: disc;
+}
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-items: space-around;
+    padding: 8rem 0;
+  }
+  .footer__section {
+    gap: 34rem;
+    width: 50%;
   }
 }
