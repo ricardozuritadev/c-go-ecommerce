@@ -27,6 +27,7 @@
       <ul class="nav__list"></ul>
     </nav>
 
+    <!-- Main menu content -->
     <main class="main"></main>
 
     <footer class="footer">
@@ -64,5 +65,21 @@
         </ol>
       </div>
     </footer>
+
+    <div id="info-modal" class="modal">
+      <div class="modal__content">
+        <i id="modal-close" class="fa-solid fa-xmark"></i>
+        <h3 class="modal__title">Burger</h3>
+        <p class="modal__price">Price: 5€</p>
+        <input
+          class="modal__quantity"
+          type="number"
+          min="1"
+          max="10"
+          value="1"
+        />
+        <button class="modal__add-to-order"></button>
+      </div>
+    </div>
   </body>
 </html>
