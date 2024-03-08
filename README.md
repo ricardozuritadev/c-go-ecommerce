@@ -1,4 +1,6 @@
 <h1 align="center">C&Go Ecommerce</h1>
+![logo](https://github.com/ricardozuritadev/c-go-ecommerce/assets/84975927/c58698d1-0a38-42af-8867-89318a14d721)
+
 
 
 ![HTML5](https://img.shields.io/badge/HTML-e34c26?style=for-the-badge&logo=html5&logoColor=white)
