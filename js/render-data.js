@@ -95,24 +95,7 @@ function renderMenuSection(data) {
 }
 
 // MODAL FUNCTIONALITY
-modalClose.onclick = function () {
-  modal.style.display = 'none';
-  modalQuantity.value = 1;
-};
-
-addOrderBtn.onclick = function () {
-  modal.style.display = 'none';
-  modalQuantity.value = 1;
-};
-
-window.onclick = function (event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-    modalQuantity.value = 1;
-  }
-};
-
-window.showModal = function (name, price, soldout) {
+function showModal(name, price, soldout) {
   modalTitle.textContent = name;
   modalPrice.textContent = 'Price: ' + price + '€';
 
@@ -121,4 +104,23 @@ window.showModal = function (name, price, soldout) {
   addOrderBtn.disabled = soldout;
 
   modal.style.display = 'block';
+
+  document.body.classList.add('no-scroll');
+}
+
+function hideModal() {
+  modal.style.display = 'none';
+  modalQuantity.value = 1;
+  document.body.classList.remove('no-scroll');
+}
+
+modalClose.onclick = hideModal;
+
+addOrderBtn.onclick = hideModal;
+
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+  if (event.target === modal) {
+    hideModal();
+  }
 };
