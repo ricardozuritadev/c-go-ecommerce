@@ -5,6 +5,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const cleanCSS = require('gulp-clean-css');
+const imagemin = require('gulp-imagemin');
 
 function reload(done) {
   browserSync.reload();
@@ -52,6 +53,16 @@ gulp.task('js', () => {
     .pipe(browserSync.stream()); // Recarga el navegador si se está ejecutando browserSync
 });
 
+gulp.task('dist-img', () => {
+  return gulp
+    .src('./assets/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/assets/img'));
+});
+
 gulp.task('watch', gulp.series('browser-sync'));
 
-gulp.task('default', gulp.series('css', 'css-unminified', 'js', 'watch'));
+gulp.task(
+  'default',
+  gulp.series('css', 'css-unminified', 'js', 'dist-img', 'watch')
+);
