@@ -18,15 +18,15 @@
     text-align: center;
   }
 
-  &__items {
+  &__item {
     &--selected {
       border-bottom: 2px solid $color-primary;
     }
   }
 
-  &__items a {
+  &__anchor {
     display: block;
-    padding: 4rem 0;
+    // padding: 4rem 0;
   }
 
   @include from-medium {
