@@ -52,12 +52,11 @@ h2 {
   display: none;
   text-align: center;
 }
-.nav__items--selected {
+.nav__item--selected {
   border-bottom: 2px solid #ff5b00;
 }
-.nav__items a {
+.nav__anchor {
   display: block;
-  padding: 4rem 0;
 }
 @media (min-width: 768px) {
   .nav {
