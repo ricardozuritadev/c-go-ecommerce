@@ -1,15 +1,15 @@
-const navList = document.querySelector('.nav__list');
-const mainSection = document.querySelector('.main');
-const modal = document.querySelector('#info-modal');
-const modalClose = document.querySelector('#modal-close');
-const addOrderBtn = document.querySelector('.modal__add-to-order');
-const modalTitle = modal.querySelector('.modal__title');
-const modalPrice = modal.querySelector('.modal__price');
-const modalQuantity = modal.querySelector('.modal__quantity');
+const navList = document.querySelector(".nav__list");
+const mainSection = document.querySelector(".main");
+const modal = document.querySelector("#info-modal");
+const modalClose = document.querySelector("#modal-close");
+const addOrderBtn = document.querySelector(".modal__add-to-order");
+const modalTitle = modal.querySelector(".modal__title");
+const modalPrice = modal.querySelector(".modal__price");
+const modalQuantity = modal.querySelector(".modal__quantity");
 
-const API_URL = 'https://api.npoint.io/5f458ccb947908d10993';
+const API_URL = "https://api.npoint.io/5f458ccb947908d10993";
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   fetchData(API_URL);
 });
 
@@ -25,35 +25,35 @@ async function fetchData(url) {
 }
 
 function renderNavItems(data) {
-  let navItems = ``;
+  let navItem = ``;
 
   navList.innerHTML = data?.map((item) => {
-    navItems += `
-        <li class="nav__items">
-          <a href="#${item.Name}">${item.Name}</a>
+    navItem += `
+        <li class="nav__item">
+          <a class="nav__anchor" href="#${item.Name}">${item.Name}</a>
         </li>
       `;
   });
 
-  navList.innerHTML = navItems;
+  navList.innerHTML = navItem;
 
-  // Add onClick event to each nav item
-  const liItems = navList.querySelectorAll('.nav__items');
-  liItems.forEach((item) => {
-    item.addEventListener('click', function () {
-      liItems.forEach((item) => {
-        item.classList.remove('nav__items--selected');
+  // Use event delegation to create onclick functionality
+  navList.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("nav__anchor")) {
+      const id = e.target.getAttribute("href");
+      const linkElements = document.querySelectorAll(".nav__anchor");
+      document.querySelector(id).scrollIntoView();
+
+      linkElements.forEach((link) => {
+        link.classList.remove("nav__item--selected");
+
+        if (link.getAttribute("href") === id) {
+          link.classList.add("nav__item--selected");
+        }
       });
-
-      // Add "selected" class to the clicked nav item
-      this.classList.add('nav__items--selected');
-    });
+    }
   });
-
-  // Select the first nav item by default
-  if (liItems.length > 0) {
-    liItems[0].classList.add('nav__items--selected');
-  }
 }
 
 function cardTemplate(data, image) {
@@ -62,10 +62,10 @@ function cardTemplate(data, image) {
     data.SoldOut
   })">
         <div class="card__img-container">
-          ${data.SoldOut ? `<div class="soldout-tag">Sold out</div>` : ''}
+          ${data.SoldOut ? `<div class="soldout-tag">Sold out</div>` : ""}
           <img src="assets/img/${image}.jpg" alt="${
     data.Name
-  }" class="card__img ${data.SoldOut ? 'card__img--soldout' : ''}" />
+  }" class="card__img ${data.SoldOut ? "card__img--soldout" : ""}" />
         </div>
         <div class="card__info">
           <h2 class="card__title">${data.Name}</h2>
@@ -85,7 +85,7 @@ function renderMenuSection(data) {
       <div class="menu-section__cards">
         ${item.MenuItems.map((menuItem) =>
           cardTemplate(menuItem, menuItem.Name)
-        ).join('')}
+        ).join("")}
       </div>    
     </section>
     `;
@@ -97,21 +97,21 @@ function renderMenuSection(data) {
 // MODAL FUNCTIONALITY
 function showModal(name, price, soldout) {
   modalTitle.textContent = name;
-  modalPrice.textContent = 'Price: ' + price + '€';
+  modalPrice.textContent = "Price: " + price + "€";
 
-  addOrderBtn.textContent = soldout ? 'Sold Out' : 'Add to order';
-  addOrderBtn.classList.toggle('modal__add-to-order--disabled', soldout);
+  addOrderBtn.textContent = soldout ? "Sold Out" : "Add to order";
+  addOrderBtn.classList.toggle("modal__add-to-order--disabled", soldout);
   addOrderBtn.disabled = soldout;
 
-  modal.style.display = 'block';
+  modal.style.display = "block";
 
-  document.body.classList.add('no-scroll');
+  document.body.classList.add("no-scroll");
 }
 
 function hideModal() {
-  modal.style.display = 'none';
+  modal.style.display = "none";
   modalQuantity.value = 1;
-  document.body.classList.remove('no-scroll');
+  document.body.classList.remove("no-scroll");
 }
 
 modalClose.onclick = hideModal;
